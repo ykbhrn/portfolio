@@ -6,21 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/main.css">
   <script src="./scripts/app.js"></script>
+  <link rel="icon" href="./images/favicon.ico" />
   <title>Jakub Horun</title>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> -->
 </head>
 
 <body>
-  <div id="cursor"></div>
   <section id="home">
-<nav class="nav-container">
+    <div id="cursor">
+      <img src="images/peace.png" alt="peace" class="peace">
+    </div>
+    <div class="hire">
+      <button>Hire Me</button>
+    </div>
+    <img src="images/angel.png" alt="angel" class="angel">
+    <img src="images/arrow.png" alt="arrow" class="arrow">
+  <nav class="nav-container">
   <div class="menu">
     <div class="menu-item"><a href="#about">About</a></div>
     <div class="menu-item"><a href="#project-section">Projects</a></div>
-    <div class="menu-item"><a>Experience</a></div>
-  </div>
-  <div class="hire">
-    <button>Hire Me</button>
+    <div class="menu-item"><a href="#experience">Experience</a></div>
   </div>
 </nav>
 
@@ -65,25 +70,77 @@ achieve our goals.
           </div>
           <div class="single-project">
        <a href="https://plantify-project.herokuapp.com/" target="_blank">
-       <img src="./images/plantify.png" alt="gyminy" width="900px" height="480px">
+       <img src="./images/plantify.png" alt="plantify" width="900px" height="480px">
        </a>
           </div>
 
           <div class="single-project">
        <a href="https://ykbhrn.github.io/sei-project-one/" target="_blank">
-       <img src="./images/artilery.png" alt="gyminy" width="900px" height="480px">
+       <img src="./images/artilery.png" alt="artilery" width="900px" height="480px">
        </a>
           </div>
 
           <div class="single-project">
        <a href="https://news-worldwide-ykbhrn.netlify.app/" target="_blank">
-        <img src="./images/news.png" alt="gyminy" width="900px" height="480px">
+        <img src="./images/news.png" alt="news" width="900px" height="480px">
       </a>
           </div>
       </div>
       </div>
 
+      <div class="projects-detail-view">
+
+        <div class="project-first">
+          <div class="single-project-detail">
+            <a href="https://gyminy.herokuapp.com/" target="_blank">
+              <img src="./images/gyminy.png" alt="gyminy" width="500px" height="260px">
+              <h2>Gyminy</h2>
+            </a>
+              Individual project built in 7 days with Django Rest Framework on the back end, and React on the front. 
+              Styling was done with SaSS and a little bit of Bulma.  I made a “virtual gym” social network. 
+          </div>
+          <div class="single-project-detail">
+            <a href="https://plantify-project.herokuapp.com/" target="_blank">
+              <img src="./images/plantify.png" alt="plantify" width="500px" height="260px">
+              <h2>Plantify</h2>
+            </a>
+              Group project of four, completed in 7 days, and build in MongoDB and React. It is a social network for houseplant-lovers. 
+              Users can show their plants and swap plants with other users. It was a perfect experience of working in a group, dividing tasks, 
+              planning, and working with a Git as a group.  My main responsibility was plant trading functionality in back end and front end.
+               I was also doing other social network functionalities and part of the styling which was done with SaSS and Bulma.  
+          </div>
+          <img src="./images/next.png" alt="next projects" class="next" width="64px" height="64px">
+        </div>
+
+        <div class="project-second">
+          <img src="./images/previous.png" alt="previous projects" class="previous" width="64px" height="64px">
+          <div class="single-project-detail">
+            <a href="https://ykbhrn.github.io/sei-project-one/" target="_blank">
+              <img src="./images/artilery.png" alt="artilery" width="500px" height="260px">
+              <h2>News</h2>
+            </a>
+              This project was created in pure JavaScript. It was an individual project and I build it in  7 days. 
+              I made tanks and artillery game based on the classic battleships game. 
+          </div>
+          <div class="single-project-detail">
+            <a href="https://news-worldwide-ykbhrn.netlify.app/" target="_blank">
+              <img src="./images/news.png" alt="news" width="500px" height="260px">
+              <h2>Artilery</h2>
+              </a>
+              Pair-coding project created in React and realized in 2 days. It is a news and weather app based on an external API. 
+          </div>
+          </div>
+        
+      </div>
+      <div class="project-icons">
+      <img src="./images/projectslidericon.png" alt="projects" class="project-icon-one">
+      <img src="./images/projecticon.png" alt="projects" class="project-icon-two">
+      </div>
     </div>
+    </section>
+
+    <section id="experience">
+      Experience
     </section>
 
 </body>

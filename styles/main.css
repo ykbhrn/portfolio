@@ -2,6 +2,11 @@
   font-family: "dirtyDeoHandInk";
   src: url("../fonts/dirtydeohandink/dirtyDeoHandInk.ttf") format("truetype");
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+
 ::before, ::after {
   box-sizing: border-box;
 }
@@ -13,17 +18,76 @@ body {
 #home {
   height: 100vh;
 }
+#home #cursor {
+  position: absolute;
+  transition: 0.5s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 4;
+}
+#home .hire {
+  width: 80px;
+  position: absolute;
+  right: 3%;
+  top: 4%;
+}
+#home .hire button {
+  cursor: pointer;
+}
+#home .angel {
+  position: absolute;
+  left: 3%;
+  bottom: 4%;
+}
+#home .arrow {
+  position: absolute;
+  animation: arrow 7s infinite linear;
+  animation-play-state: inherit;
+  z-index: 30;
+}
+#home .peace {
+  position: absolute;
+  top: -10px;
+  left: -450px;
+  animation: rotation 8s infinite linear;
+}
 
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes arrow {
+  0% {
+    left: 3%;
+    top: 90%;
+  }
+  37% {
+    left: 45%;
+    top: 45%;
+  }
+  74% {
+    left: 92%;
+    top: 1%;
+  }
+  87% {
+    left: 92%;
+    top: 1%;
+  }
+  100% {
+    left: 92%;
+    top: 1%;
+  }
+}
 .nav-container {
   display: flex;
   justify-content: center;
-}
-
-.nav-scrolled {
-  background: black;
-}
-.nav-scrolled a {
-  color: white;
 }
 
 .selected-nav {
@@ -33,14 +97,6 @@ body {
 nav {
   z-index: 111;
   font-size: 24px;
-}
-nav .hire {
-  width: 80px;
-  position: fixed;
-  right: 10px;
-}
-nav .hire button {
-  cursor: pointer;
 }
 nav a {
   color: black;
@@ -73,18 +129,6 @@ nav .menu-item:hover::before {
   transform-origin: left;
 }
 
-#cursor {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid black;
-  border-radius: 40%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 4;
-  background: #d41c64;
-}
-
 #project-section {
   height: 100vh;
   display: flex;
@@ -110,7 +154,57 @@ nav .menu-item:hover::before {
   height: 480px;
 }
 
-@-webkit-keyframes projects {
+.project-icons {
+  display: flex;
+  cursor: pointer;
+}
+.project-icons img {
+  margin: 20px 50px 0 0;
+}
+
+.projects-detail-view {
+  height: 480px;
+  display: none;
+}
+.projects-detail-view .single-project-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
+.projects-detail-view .single-project-detail:nth-child(1) {
+  margin-right: 50px;
+}
+.projects-detail-view .single-project-detail:nth-child(2) {
+  margin-right: 50px;
+}
+.projects-detail-view .project-first {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: start;
+}
+.projects-detail-view .project-second {
+  display: none;
+  justify-content: space-around;
+  position: relative;
+  align-items: start;
+}
+.projects-detail-view .next {
+  position: absolute;
+  right: -20px;
+  top: 35%;
+  cursor: pointer;
+}
+.projects-detail-view .previous {
+  position: absolute;
+  left: -70px;
+  top: 35%;
+  cursor: pointer;
+}
+
+@keyframes projects {
   0% {
     left: 0px;
   }
@@ -204,6 +298,10 @@ h1 {
 .love-img {
   width: 560px;
   height: 360px;
+}
+
+#experience {
+  height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */
