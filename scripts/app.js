@@ -14,6 +14,11 @@ function init() {
   const projectSecond = document.querySelector('.project-second')
   const next = document.querySelector('.next')
   const previous = document.querySelector('.previous')
+  const nextAbout = document.querySelector('.next-about')
+  const previousAbout = document.querySelector('.previous-about')
+  const aboutText = document.querySelector('.about-container')
+  const aboutWho = document.querySelector('.about-who-container')
+  const aboutHeader = document.querySelector('.about-header')
 
   function scroll() {
     const selected = document.querySelector('.selected-nav')
@@ -106,6 +111,18 @@ function init() {
     projectFirst.style.display = 'none'
   }
 
+  function showText() {
+    aboutText.style.display = 'flex'
+    aboutWho.style.display = 'none'
+    aboutHeader.textContent = 'How the Love began?'
+  }
+
+  function showWho() {
+    aboutWho.style.display = 'flex'
+    aboutText.style.display = 'none'
+    aboutHeader.textContent = 'Who am I in the Pictures'
+  }
+
 
   document.addEventListener( 'mousemove', cursorMove)
   header.addEventListener('click', activeNavbar)
@@ -119,6 +136,8 @@ function init() {
   projectIconAll.addEventListener('click', showAll)
   previous.addEventListener('click', showFirst)
   next.addEventListener('click', showSecond)
+  previousAbout.addEventListener('click', showText)
+  nextAbout.addEventListener('click', showWho)
 }
 
 window.addEventListener('DOMContentLoaded', init)
