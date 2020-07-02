@@ -372,21 +372,21 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-#experience h1 {
-  margin-bottom: 0px;
-}
 
 .experience-container {
   display: flex;
   justify-content: center;
   align-items: start;
   width: 100vw;
-  height: 85%;
+  height: 90%;
+}
+.experience-container h1 {
+  margin-bottom: 20px;
 }
 
 .experience-card {
   width: 40vw;
-  height: 85%;
+  height: 90%;
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -407,7 +407,10 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 85%;
+  height: 90%;
+}
+.skills-container h1 {
+  margin-bottom: 0px;
 }
 .skills-container .skills {
   display: flex;
@@ -415,13 +418,13 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 38vw;
-  height: 85%;
+  height: 90%;
 }
 .skills-container .skills .skill-card {
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 15px;
+  margin: 14px;
 }
 .skills-container .skills .skill-card img {
   margin-bottom: 5px;
