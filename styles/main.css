@@ -22,16 +22,15 @@ body {
 }
 #home #cursor {
   position: absolute;
-  transition: 0.5s;
 }
 #home #cursor .cursor-background {
   position: absolute;
-  right: 20%;
-  top: 10%;
+  right: 55px;
+  top: 40px;
   pointer-events: none;
   z-index: -1;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   background-image: url("../images/background.jpg");
   background-attachment: fixed;
   background-position: center top;
@@ -68,7 +67,9 @@ body {
 }
 #home .peace {
   z-index: -1;
-  animation: rotation 8s infinite linear;
+  position: absolute;
+  left: -460px;
+  top: -30px;
 }
 
 @keyframes rotation {
@@ -169,12 +170,14 @@ nav .menu-item:hover::before {
   width: 900px;
   height: 480px;
   overflow: hidden;
-  z-index: -1;
 }
 
 .single-project {
   width: 900px;
   height: 480px;
+}
+.single-project:hover {
+  filter: brightness(0.7);
 }
 
 .project-icons {
@@ -201,6 +204,9 @@ nav .menu-item:hover::before {
 }
 .projects-detail-view .single-project-detail:nth-child(2) {
   margin-right: 50px;
+}
+.projects-detail-view .single-project-detail:hover {
+  filter: brightness(0.7);
 }
 .projects-detail-view .project-first {
   display: flex;
@@ -272,7 +278,7 @@ nav .menu-item:hover::before {
   width: 2400px;
   position: relative;
   height: 480px;
-  animation: projects 25s infinite normal;
+  animation: projects 15s infinite normal;
   animation-play-state: inherit;
   display: flex;
 }
@@ -292,11 +298,13 @@ h1 {
 .about-container {
   display: flex;
   align-items: center;
-  width: 90%;
+  justify-content: center;
+  width: 95%;
+  flex-wrap: wrap;
 }
 
 .about-text {
-  width: 50%;
+  width: 45%;
   font-size: 25px;
   font-weight: 600;
   position: relative;
@@ -304,8 +312,13 @@ h1 {
   z-index: -1;
 }
 
+.love-img-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .next-about {
-  margin-left: 30px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
@@ -318,6 +331,7 @@ h1 {
   display: none;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 100vw;
   margin-bottom: -40px;
 }
@@ -361,64 +375,68 @@ h1 {
   }
 }
 .love-img {
-  width: 560px;
-  height: 360px;
+  width: 520px;
+  height: 310px;
 }
 
 #experience {
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.experience-container {
+.experience-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: start;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 90%;
 }
-.experience-container h1 {
-  margin-bottom: 20px;
+.experience-wrapper h1 {
+  margin: 0px;
 }
 
-.experience-card {
-  width: 40vw;
-  height: 90%;
+.experience-container {
+  width: 500px;
   display: flex;
-  align-items: start;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   margin-right: 50px;
 }
-.experience-card .experience-item {
+.experience-container .experience-item {
   margin-bottom: 40px;
 }
-.experience-card .experience-item h2 {
+.experience-container .experience-item h2 {
   margin: 0px;
 }
-.experience-card .experience-item .experience-text {
+.experience-container .experience-item .experience-text {
   font-size: 20px;
+}
+.experience-container img:hover {
+  filter: brightness(0.7);
 }
 
 .skills-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
 }
 .skills-container h1 {
-  margin-bottom: 0px;
+  margin: 0px;
 }
 .skills-container .skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 38vw;
-  height: 90%;
+  width: 500px;
+  height: 100%;
 }
 .skills-container .skills .skill-card {
   display: flex;
@@ -460,6 +478,34 @@ h1 {
 
 #hire {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  height: 30px;
+}
+form input, form textarea {
+  font-size: 20px;
+}
+
+.socials img {
+  margin: 0 30px;
+}
+.socials img:hover {
+  background-color: #d41c64;
 }
 
 /*# sourceMappingURL=main.css.map */

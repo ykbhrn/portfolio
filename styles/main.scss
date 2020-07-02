@@ -28,16 +28,16 @@ body{
   height: 100vh;
   #cursor{
    position: absolute;
-   transition: 0.5s;
+  //  transition: 0.1s;
     .cursor-background{
       position: absolute;
-      right: 20%;
-      top: 10%;
+      right: 55px;
+      top: 40px;
       // transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: -1;
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       background-image: url('../images/background.jpg');
       background-attachment: fixed;
       background-position: center top;
@@ -75,7 +75,10 @@ body{
   }
   .peace{
     z-index: -1;
-    animation: rotation 8s infinite linear;
+    // animation: rotation 8s infinite linear;
+    position: absolute;
+    left: -460px;
+    top: -30px;
   }
 }
 
@@ -166,12 +169,14 @@ nav{
   width: 900px;
   height: 480px;
   overflow: hidden;
-  z-index: -1;
 }
 
 .single-project{
   width: 900px;
   height: 480px;
+  &:hover{
+    filter: brightness(0.7);
+  }
 }
 
 .project-icons{
@@ -196,6 +201,9 @@ nav{
     }
     &:nth-child(2){
       margin-right: 50px;
+    }
+    &:hover{
+      filter: brightness(0.7);
     }
   }
   .project-first{
@@ -249,7 +257,7 @@ nav{
   width: 2400px;
   position: relative;
   height: 480px;
-  animation: projects 25s infinite normal;
+  animation: projects 15s infinite normal;
   animation-play-state: inherit;
   display: flex;
 }
@@ -261,6 +269,7 @@ nav{
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  // flex-wrap: wrap;
 }
 
 h1{
@@ -270,11 +279,13 @@ h1{
 .about-container{
   display: flex;
   align-items: center;
-  width: 90%;
+  justify-content: center;
+  width: 95%;
+  flex-wrap: wrap;
 }
 
 .about-text{
-  width: 50%;
+  width: 45%;
   font-size: 25px;
   font-weight: 600;
   position: relative;
@@ -282,8 +293,13 @@ h1{
   z-index: -1;
 }
 
+.love-img-wrapper{
+  display: flex;
+  align-items: center;
+}
+
 .next-about{
-  margin-left: 30px;
+  margin-left: 20px;
   cursor: pointer;
 }
 .previous-about{
@@ -295,6 +311,7 @@ h1{
   display: none;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 100vw;
   margin-bottom: -40px;
   .about-pictures-container{
@@ -337,8 +354,8 @@ h1{
 }
 
 .love-img{
-  width: 560px;
-  height: 360px;
+  width: 520px;
+  height: 310px;
 }
 
 //experience
@@ -346,27 +363,26 @@ h1{
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.experience-container{
+.experience-wrapper{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: start;
+  flex-wrap: wrap;
   width: 100vw;
-  height: 90%;
   h1{
-    margin-bottom: 20px;
+    margin: 0px;
   }
 }
 
-.experience-card{
-  width: 40vw;
-  height: 90%;
+.experience-container{
+  width: 500px;
   display: flex;
-  align-items: start;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   margin-right: 50px;
   .experience-item{
@@ -378,23 +394,28 @@ h1{
       font-size: 20px;
     }
   }
+  img:hover{
+    filter: brightness(0.7);
+  }
 }
 
 .skills-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 90%;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 500px;
   h1{
-    margin-bottom: 0px;  
+    margin: 0px;  
   }
   .skills{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 38vw;
-    height: 90%;
+    width: 500px;
+    height: 100%;
     .skill-card{
       display: flex;
       flex-direction: column;
@@ -439,4 +460,35 @@ h1{
 //Hire me
 #hire{
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  input{
+    height: 30px;
+  }
+  input, textarea{
+    font-size: 20px;
+  }
+}
+
+.socials{
+  img{
+    margin: 0 30px;
+    }
+  img:hover{
+    background-color: $main;
+  }
+
 }
