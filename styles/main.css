@@ -19,9 +19,14 @@ body {
 
 #home {
   height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #home #cursor {
   position: absolute;
+  transition: 0.1s;
 }
 #home #cursor .cursor-background {
   position: absolute;
@@ -38,87 +43,129 @@ body {
   background-size: cover;
   clip-path: circle(50% at 50% 50%);
 }
-#home .hire {
-  z-index: 20;
-  width: 80px;
+#home .hiring-animation {
+  font-weight: bold;
   position: absolute;
-  right: 3%;
-  top: 4%;
-}
-#home .hire button {
-  cursor: pointer;
-}
-#home .angel {
-  position: absolute;
-  left: 3%;
-  bottom: 4%;
-}
-#home .arrow {
-  position: absolute;
-  animation: arrow 9s infinite linear;
+  animation: ball 9s infinite linear;
   animation-play-state: inherit;
-  z-index: 10;
-}
-#home .peace-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-image: url("../images/background.jpg");
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  width: 150px;
+  height: 150px;
+  clip-path: circle(50% at 50% 50%);
+  z-index: 112;
 }
 #home .peace {
   z-index: -1;
+  animation: rotation 9s infinite linear;
   position: absolute;
   left: -460px;
   top: -30px;
 }
 
+@keyframes hire {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  74% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+@keyframes ball {
+  0% {
+    left: 0%;
+    top: 90%;
+    font-size: 0px;
+    opacity: 1;
+  }
+  10% {
+    left: 25%;
+    top: 15%;
+    font-size: 0px;
+    opacity: 1;
+  }
+  20% {
+    left: 45%;
+    top: 45%;
+    font-size: 0px;
+    opacity: 1;
+  }
+  30% {
+    left: 65%;
+    top: 75%;
+    font-size: 0px;
+    opacity: 1;
+  }
+  39% {
+    font-size: 0px;
+    opacity: 1;
+  }
+  40% {
+    left: 87%;
+    top: 5%;
+    font-size: 35px;
+    opacity: 0;
+  }
+  87% {
+    left: 87%;
+    top: 5%;
+    font-size: 35px;
+    opacity: 0;
+  }
+  100% {
+    left: 87%;
+    top: 5%;
+    font-size: 35px;
+    opacity: 0;
+  }
+}
 @keyframes rotation {
   0% {
-    transform: rotate(0deg);
+    transform: none;
   }
-  50% {
+  40% {
+    transform: none;
+  }
+  74% {
     transform: rotate(180deg);
   }
   100% {
     transform: rotate(360deg);
   }
 }
-@keyframes arrow {
-  0% {
-    left: 3%;
-    top: 90%;
-  }
-  20% {
-    left: 45%;
-    top: 45%;
-  }
-  40% {
-    left: 92%;
-    top: 1%;
-  }
-  87% {
-    left: 92%;
-    top: 1%;
-  }
-  100% {
-    left: 92%;
-    top: 1%;
-  }
-}
 .nav-container {
   display: flex;
   justify-content: center;
+  width: 100vw;
+  background-color: white;
 }
 
-.selected-nav {
-  border-bottom: 2px solid #d41c64;
+.selected-nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background: #d41c64;
 }
 
 nav {
-  margin-top: 10px;
+  padding: 10px 0 5px 0;
   z-index: 111;
   font-size: 24px;
   font-weight: bold;
+  position: fixed;
 }
 nav a {
   color: black;
@@ -126,7 +173,6 @@ nav a {
   text-decoration: none;
 }
 nav .menu {
-  position: fixed;
   display: flex;
   justify-content: center;
 }
@@ -150,6 +196,17 @@ nav .menu-item::before {
 nav .menu-item:hover::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+nav .home {
+  position: absolute;
+  left: 20px;
+}
+nav .hire {
+  z-index: 113;
+  width: 80px;
+  position: absolute;
+  right: 3px;
+  animation: hire 9s infinite;
 }
 
 #project-section {
@@ -300,7 +357,9 @@ h1 {
   align-items: center;
   justify-content: center;
   width: 95%;
+  height: 70vh;
   flex-wrap: wrap;
+  margin-top: -30px;
 }
 
 .about-text {
@@ -333,6 +392,7 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
+  height: 70vh;
   margin-bottom: -40px;
 }
 .about-who-container .about-pictures-container {
@@ -381,7 +441,6 @@ h1 {
 
 #experience {
   height: 100vh;
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -457,14 +516,6 @@ h1 {
   background-size: cover;
   clip-path: polygon(0 9%, 100% 9%, 100% 64%, 0 100%);
 }
-.para.one {
-  width: 70%;
-  height: 30%;
-  position: absolute;
-  top: 30%;
-  left: 15%;
-  clip-path: polygon(9% 22%, 29% 12%, 43% 35%, 11% 84%, 56% 73%, 76% 62%, 87% 38%, 89% 13%, 12% 38%, 17% 44%, 46% 93%, 71% 86%, 83% 78%);
-}
 .para.two {
   width: 100%;
   height: 300px;
@@ -488,6 +539,14 @@ h1 {
 .form {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  border: 1px solid #d41c64;
+  padding: 10px 30px 30px 30px;
+}
+.form .status {
+  color: #d41c64;
+  margin-left: 20px;
 }
 
 form {
@@ -497,8 +556,19 @@ form {
 form input {
   height: 30px;
 }
+form button {
+  cursor: pointer;
+  font-family: "dirtyDeoHandInk";
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px;
+  margin: 5px;
+  background: #DCDCDC;
+  border-radius: 20px;
+}
 form input, form textarea {
   font-size: 20px;
+  margin: 5px;
 }
 
 .socials img {
@@ -506,6 +576,66 @@ form input, form textarea {
 }
 .socials img:hover {
   background-color: #d41c64;
+}
+
+@media only screen and (max-width: 1100px) {
+  #cursor {
+    position: relative !important;
+  }
+  #cursor .cursor-background {
+    left: 65px !important;
+    top: 60px !important;
+  }
+
+  .peace {
+    position: static !important;
+    animation: none !important;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #home, #project-section, #experience, #about, #hire {
+    overflow: auto;
+  }
+
+  .nav-container {
+    position: absolute;
+  }
+  .nav-container .menu {
+    flex-direction: column;
+  }
+  .nav-container .menu .home {
+    position: static;
+  }
+  .nav-container .menu .hire {
+    position: static;
+  }
+
+  #cursor {
+    position: relative !important;
+    width: 300px;
+    height: 300px;
+  }
+  #cursor .cursor-background {
+    left: 45px !important;
+    top: 55px !important;
+    width: 204px !important;
+    height: 204px !important;
+  }
+
+  .peace {
+    position: static !important;
+    width: 300px;
+    height: 300px;
+  }
+
+  .para {
+    background: #d41c64;
+    height: 2px !important;
+  }
+
+  .hiring-animation {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

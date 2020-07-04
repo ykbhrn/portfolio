@@ -6,7 +6,7 @@ function init() {
   const slider = document.querySelector('.projects')
   const about = document.getElementById('about')
   const experience = document.getElementById('experience')
-  const sectionOne = document.getElementById('home')
+  const home = document.getElementById('home')
   const header = document.querySelector('.menu')
   const projectIconOne = document.querySelector('.project-icon-one')
   const projectIconAll = document.querySelector('.project-icon-two')
@@ -20,37 +20,66 @@ function init() {
   const aboutWho = document.querySelector('.about-who-container')
   const aboutHeader = document.querySelector('.about-header')
 
+
   function scroll() {
-    const selected = document.querySelector('.selected-nav')
-    if (selected !== null) {
-      selected.classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      const selected = document.querySelector('.selected-nav')
+      if (selected !== null) {
+        selected.classList.remove('selected-nav')
+      }
+      header.children[2].classList.add('selected-nav')
     }
-    header.children[1].classList.add('selected-nav')
   }
+
   function scrollOut() {
-    header.children[1].classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      header.children[2].classList.remove('selected-nav')
+    }
   }
 
   function scrollAbout() {
-    const selected = document.querySelector('.selected-nav')
-    if (selected !== null) {
-      selected.classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      const selected = document.querySelector('.selected-nav')
+      if (selected !== null) {
+        selected.classList.remove('selected-nav')
+      }
+      header.children[1].classList.add('selected-nav')
     }
-    header.children[0].classList.add('selected-nav')
   }
   function scrollOutAbout() {
-    header.children[0].classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      header.children[1].classList.remove('selected-nav')
+    }
   }
 
   function scrollExperience() {
-    const selected = document.querySelector('.selected-nav')
-    if (selected !== null) {
-      selected.classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      const selected = document.querySelector('.selected-nav')
+      if (selected !== null) {
+        selected.classList.remove('selected-nav')
+      }
+      header.children[3].classList.add('selected-nav')
     }
-    header.children[2].classList.add('selected-nav')
   }
   function scrollOutExperience() {
-    header.children[2].classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      header.children[3].classList.remove('selected-nav')
+    }
+  }
+
+  function scrollHome() {
+    if ( $(document).width() > 1100 ){
+      const selected = document.querySelector('.selected-nav')
+      if (selected !== null) {
+        selected.classList.remove('selected-nav')
+      }
+      header.children[0].classList.add('selected-nav')
+    }
+  }
+  function scrollOutHome() {
+    if ( $(document).width() > 1100 ){
+      header.children[0].classList.remove('selected-nav')
+    }
   }
   
     
@@ -69,26 +98,30 @@ function init() {
   }, 
   sectionOneOptions)
 
-  sectionOneObserver.observe(sectionOne)
+  sectionOneObserver.observe(home)
 
 
 
   function cursorMove(event) {
-
-    const x = event.clientX
-    const y = event. clientY
-    cursor.style.left = x + 'px'
-    cursor.style.top = y + 'px'
+    
+    if ( $(document).width() > 1100 ){
+      const x = event.clientX
+      const y = event. clientY
+      cursor.style.left = x + 'px'
+      cursor.style.top = y + 'px'
+    }
     
   }
 
 
   function activeNavbar(event){ 
-    const selected = document.querySelector('.selected-nav')
-    if (selected !== null) {
-      selected.classList.remove('selected-nav')
+    if ( $(document).width() > 1100 ){
+      const selected = document.querySelector('.selected-nav')
+      if (selected !== null) {
+        selected.classList.remove('selected-nav')
+      }
+      event.target.className = 'selected-nav'
     }
-    event.target.className = 'selected-nav'
   }
 
   function showAll(){
@@ -123,11 +156,31 @@ function init() {
     aboutHeader.textContent = 'Who am I in the Pictures'
   }
 
+  $('.submit').click(function() {
+    console.log('click')
+    
+    const email = $('.email').val()
+    const subject = $('.subject').val()
+    const message = $('.message').val()
+    const statusElm = $('.status')
+    statusElm.empty()
+
+    if (email.length < 5 || !email.includes('@') || !email.includes('.')) {
+      event.preventDefault()
+      statusElm.append('<div>Type valid email adress</div>')   
+    } 
+    if (message.length < 2)  {
+      event.preventDefault()
+      statusElm.append('<div>You can\'t send empty email</div>')
+    }
+  })
 
   document.addEventListener( 'mousemove', cursorMove)
   header.addEventListener('click', activeNavbar)
   projects.addEventListener('mouseenter', scroll)
   projects.addEventListener('mouseleave', scrollOut)
+  home.addEventListener('mouseenter', scrollHome)
+  home.addEventListener('mouseleave', scrollOutHome)
   about.addEventListener('mouseenter', scrollAbout)
   about.addEventListener('mouseleave', scrollOutAbout)
   experience.addEventListener('mouseenter', scrollExperience)

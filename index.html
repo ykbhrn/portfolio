@@ -2,37 +2,36 @@
 <html lang="en">
 
 <head>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/main.css">
+  <link type="text/css" rel="stylesheet" href="./styles/normalize.css">
+  <link type="text/css"  rel="stylesheet" href="./styles/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
   <script src="./scripts/app.js"></script>
   <link rel="icon" href="./images/favicon.ico" />
-  <title>Jakub Horun</title>
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> -->
+  <title>Jakub Horun | Developer</title>
 </head>
 
 <body>
+  <nav class="nav-container">
+    <div class="menu">
+      <div class="menu-item home"><a href="#home">&lt;a&gt;home&lt;/a&gt;</a></div>
+      <div class="menu-item"><a href="#about">About</a></div>
+      <div class="menu-item"><a href="#project-section">Projects</a></div>
+      <div class="menu-item"><a href="#experience">Experience</a></div>
+      <div class="menu-item hire">
+        <a href="#hire">Hire Me</a>
+      </div>
+    </div>
+  </nav>
   <section id="home">
-    <!-- <div class="para one"></div> -->
     <div id="cursor">
       <div class="cursor-background"></div>
       <img src="images/peace.png" alt="peace" class="peace">
     </div>
-    <div class="hire">
-      <a href="#hire">Hire Me</a>
-    </div>
-    <img src="images/angel.png" alt="angel" class="angel">
-    <img src="images/arrow.png" alt="arrow" class="arrow">
-    <nav class="nav-container">
-      <div class="menu">
-        <div class="menu-item"><a href="#about">About</a></div>
-        <div class="menu-item"><a href="#project-section">Projects</a></div>
-        <div class="menu-item"><a href="#experience">Experience</a></div>
-      </div>
-    </nav>
-    <!-- <div class="peace-container">
-<img src="images/peace.png" alt="peace" class="peace">
-</div> -->
+    <div class="hiring-animation"></div>
+
   </section>
   <div class="para two"></div>
 
@@ -42,15 +41,16 @@
       <div class="about-text">
         <div class="heart"><img src="images/heart.png" alt="heart"></div>
         <p>
-          My first experience with coding was at university, where I created a WordPress website for my e-
-          shop. I really enjoyed the process of making it and then after some time, I started with an online
-          HTML and CSS course and immediately fell in love with it. My next step led me to PHP and from
-          there I decided to do a 3-month immersive course at General Assembly. I enjoyed course a lot. We've done
+          My first experience with coding was at university, where I created a WordPress website for my e-shop.
+         I really enjoyed the process of making it and then after some time, I started with an online
+         HTML and CSS course and immediately fell in love with it. My next step led me to PHP and from there I decided to do a 3-month immersive course at General Assembly. I enjoyed the course a lot. It was a great experience,
+          I gained a lot of technical skills, understanding of the industry, and group problem-solving experiences. 
+          Now, I feel ready for the next step to join an ambitious team to do great projects and change the world.
         </p>
       </div>
       <div class="love-img-wrapper">
-      <img src="images/jslove.jpg" alt="js-love" class="love-img">
-      <img src="./images/next.png" alt="next projects" class="next-about" width="64px" height="64px">
+        <img src="images/jslove.jpg" alt="js-love" class="love-img">
+        <img src="./images/next.png" alt="next projects" class="next-about" width="64px" height="64px">
       </div>
     </div>
     <div class="about-who-container">
@@ -182,7 +182,7 @@
               <img src="./images/gyminy.png" alt="gyminy" width="500px" height="260px">
               <h2>Gyminy</h2>
             </a>
-            Individual project built in 7 days with Django Rest Framework on the back end, and React on the front.
+            Individual project built in 7 days with Python (Django Rest Framework) on the back end, and JavaScript(React) on the front.
             Styling was done with SaSS and a little bit of Bulma. I made a “virtual gym” social network.
           </div>
           <div class="single-project-detail">
@@ -190,7 +190,8 @@
               <img src="./images/plantify.png" alt="plantify" width="500px" height="260px">
               <h2>Plantify</h2>
             </a>
-            Group project of four, completed in 7 days, and build in MongoDB and React. It is a social network for
+            Group project of four, completed in 7 days, and build in JavaScript. <br> Node.js(MongoDB) on the back end 
+            and React on the frontend. It is a social network for
             houseplant-lovers.
             Users can show their plants and swap plants with other users. It was a perfect experience of working in a
             group, dividing tasks,
@@ -207,7 +208,7 @@
           <div class="single-project-detail">
             <a href="https://ykbhrn.github.io/sei-project-one/" target="_blank">
               <img src="./images/artilery.png" alt="artilery" width="500px" height="260px">
-              <h2>News</h2>
+              <h2>Artillery Game</h2>
             </a>
             This project was created in pure JavaScript. It was an individual project and I build it in 7 days.
             I made tanks and artillery game based on the classic battleships game.
@@ -215,10 +216,10 @@
           <div class="single-project-detail">
             <a href="https://news-worldwide-ykbhrn.netlify.app/" target="_blank">
               <img src="./images/news.png" alt="news" width="500px" height="260px">
-              <h2>Artilery</h2>
+              <h2>News</h2>
             </a>
-            Pair-coding project created in React and realized in 2 days. It is a news and weather app based on an
-            external API.
+            Pair-coding project created in JavaScript(React) and realized in 2 days. It is a news and weather app based on two
+            external API's. It was very important experience in pair-coding.
           </div>
         </div>
 
@@ -242,18 +243,21 @@
           <div class="experience-text">
             13 weeks Software Engineering Immersive Bootcamp at General Assembly. It gave me a lot of technical skills,
             a good understanding of the industry, and also group problem-solving experiences. 
-            Our day on the course usually started with morning standup, then we had some coding warmup exercise and after that, our instructors explained new technology, 
-            and then we were doing practice exercises with new technology. During the course I've been working on group and 
-            individual projects, I have done front end, and full-stack apps using React, Django, Node, etc.        
+            Each day on the course usually started with morning standup followed by a coding warmup exercise 
+            (normally on codewars). After this, we would begin with the day’s topic, learning new topics, 
+            and completing exercises to solidify what we've learnt. During the course I've been working on group 
+            and individual projects, I have done front end, and full-stack apps using React, Django, Node, etc.     
           </div>
         </div>
 
         <div class="experience-item">
-          <a href="https://www.learn2code.sk/" target="_blank"><img src="./images/learn.png" alt="Learn2Code.sk" width="70px" height="70px"></a>
+          <a href="https://www.learn2code.sk/" target="_blank"><img src="./images/learn.png" alt="Learn2Code.sk"
+              width="70px" height="70px"></a>
           <h2>Online Courses at learn2code.sk</h2>
           <div class="experience-text">
-           Before I started at General Assembly, I have done few online courses at Slovakian coding educational website learn2code.sk 
-           There are courses about almost every modern coding technology. I was focusing on HTML & CSS, jQuery and PHP. 
+            Before I started at General Assembly, I have done a few online courses at Slovakian coding educational website
+            learn2code.sk
+            There are courses about almost every modern coding technology. I was focusing on HTML & CSS, jQuery and PHP.
           </div>
         </div>
       </div>
@@ -348,17 +352,23 @@
 
     <div class="form">
       <h2>Contact Me</h2>
-      <form action="">
-      <input type="email" name="email" placeholder="your email">
-      <textarea name="" id="" cols="50" rows="7" placeholder="..."></textarea>
-      <button>Send</button>
+      <form action="https://formspree.io/horun.jakub1@gmail.com"
+      method="POST">
+        <input class="email" type="email" name="email" placeholder="your email">
+        <input class="subject" type="text" name="subject" placeholder="subject">
+        <textarea class="message" name="message" id="" cols="50" rows="7" placeholder="..."></textarea>
+        <div class="status"></div>
+        <button class="submit" type="submit">Send</button>
       </form>
     </div>
 
     <div class="socials">
-    <a href="https://github.com/ykbhrn" target="_blank"><img src="./images/githubbig.png" alt="GitHub" width="80px" height="80px"></a>
-    <a href="https://www.linkedin.com/in/jakub-horun/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn" width="80px" height="80px"></a>
-    <a href="https://drive.google.com/file/d/1z7EdXo4mwGKHPi4UNlIpboKZYHs9cMev/view?usp=sharing" target="_blank"><img src="./images/cv.png" alt="CV" width="80px" height="80px"></a>
+      <a href="https://github.com/ykbhrn" target="_blank"><img src="./images/githubbig.png" alt="GitHub" width="80px"
+          height="80px"></a>
+      <a href="https://www.linkedin.com/in/jakub-horun/" target="_blank"><img src="./images/linkedin.png" alt="LinkedIn"
+          width="80px" height="80px"></a>
+      <a href="https://drive.google.com/file/d/1z7EdXo4mwGKHPi4UNlIpboKZYHs9cMev/view?usp=sharing" target="_blank"><img
+          src="./images/cv.png" alt="CV" width="80px" height="80px"></a>
     </div>
   </section>
 </body>
