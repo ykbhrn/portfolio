@@ -19,6 +19,8 @@ function init() {
   const aboutText = document.querySelector('.about-container')
   const aboutWho = document.querySelector('.about-who-container')
   const aboutHeader = document.querySelector('.about-header')
+  const hamburger = document.querySelector('.hamburger-img')
+  const hamburgerMenu = document.querySelector('.hamburger-nav')
 
 
   function scroll() {
@@ -120,7 +122,7 @@ function init() {
       if (selected !== null) {
         selected.classList.remove('selected-nav')
       }
-      event.target.className = 'selected-nav'
+      event.target.classList.add('selected-nav')
     }
   }
 
@@ -175,6 +177,26 @@ function init() {
     }
   })
 
+  // function hamburgerIn() {
+  //   hamburgerMenu.style.display = 'flex'
+  // }
+
+  // function hamburgerOut() {
+  //   setTimeout(() => {
+  //     hamburgerMenu.style.display = 'none'
+  //   }, 2000)
+  // }
+  hamburgerMenu.style.display = 'none'
+  function hamburgerClick() {
+    if (hamburgerMenu.style.display === 'none'){
+      hamburgerMenu.style.display = 'flex'
+      hamburger.style.backgroundImage = 'url(' + './images/openhamburger.png' + ')'
+    } else {
+      hamburgerMenu.style.display = 'none'
+      hamburger.style.backgroundImage = 'url(' + './images/hamburger.png' + ')'
+    }
+  }
+
   document.addEventListener( 'mousemove', cursorMove)
   header.addEventListener('click', activeNavbar)
   projects.addEventListener('mouseenter', scroll)
@@ -191,6 +213,9 @@ function init() {
   next.addEventListener('click', showSecond)
   previousAbout.addEventListener('click', showText)
   nextAbout.addEventListener('click', showWho)
+  // hamburger.addEventListener('mouseenter', hamburgerIn)
+  // hamburger.addEventListener('mouseleave', hamburgerOut)
+  hamburger.addEventListener('click', hamburgerClick)
 }
 
 window.addEventListener('DOMContentLoaded', init)

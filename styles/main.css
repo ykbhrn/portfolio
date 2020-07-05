@@ -2,9 +2,17 @@
   font-family: "dirtyDeoHandInk";
   src: url("../fonts/dirtydeohandink/dirtyDeoHandInk.ttf") format("truetype");
 }
+#home, #project-section, #experience, #about, #hire {
+  overflow: auto;
+}
+
 a {
   text-decoration: none;
   color: black;
+}
+
+h2 {
+  color: #d41c64;
 }
 
 ::before, ::after {
@@ -143,6 +151,40 @@ body {
     transform: rotate(360deg);
   }
 }
+.hamburger-nav {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 67px;
+  left: -5px;
+  flex-direction: column;
+  z-index: 121;
+  background: white;
+  opacity: 0.9;
+  padding: 5px 5px 5px 25px;
+  border: 1px solid #DCDCDC;
+}
+.hamburger-nav .hamburger-item {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+.hamburger-nav .hamburger-item:hover {
+  border-bottom: 1px solid #d41c64;
+}
+
+.hamburger-img {
+  z-index: 120;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  display: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: url("../images/hamburger.png");
+  background-size: cover;
+}
+
 .nav-container {
   display: flex;
   justify-content: center;
@@ -162,7 +204,7 @@ body {
 
 nav {
   padding: 10px 0 5px 0;
-  z-index: 111;
+  z-index: 110;
   font-size: 24px;
   font-weight: bold;
   position: fixed;
@@ -215,6 +257,10 @@ nav .hire {
   justify-content: center;
   align-items: center;
 }
+#project-section h2 {
+  text-align: center;
+  margin: 0px;
+}
 
 .project-container {
   display: flex;
@@ -256,6 +302,9 @@ nav .hire {
   align-items: center;
   width: 500px;
 }
+.projects-detail-view .single-project-detail img {
+  width: 500px;
+}
 .projects-detail-view .single-project-detail:nth-child(1) {
   margin-right: 50px;
 }
@@ -270,6 +319,9 @@ nav .hire {
   justify-content: space-between;
   position: relative;
   align-items: start;
+}
+.projects-detail-view .single-project-text {
+  font-size: 20px;
 }
 .projects-detail-view .project-second {
   display: none;
@@ -371,11 +423,6 @@ h1 {
   z-index: -1;
 }
 
-.love-img-wrapper {
-  display: flex;
-  align-items: center;
-}
-
 .next-about {
   margin-left: 20px;
   cursor: pointer;
@@ -434,9 +481,14 @@ h1 {
     transform: scale(1.2);
   }
 }
+.love-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .love-img {
   width: 520px;
-  height: 310px;
 }
 
 #experience {
@@ -446,6 +498,10 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+#experience h1 {
+  display: none;
+  margin: 0px;
+}
 
 .experience-wrapper {
   display: flex;
@@ -453,9 +509,6 @@ h1 {
   align-items: start;
   flex-wrap: wrap;
   width: 100vw;
-}
-.experience-wrapper h1 {
-  margin: 0px;
 }
 
 .experience-container {
@@ -469,7 +522,7 @@ h1 {
   margin-bottom: 40px;
 }
 .experience-container .experience-item h2 {
-  margin: 0px;
+  margin: 5px 0;
 }
 .experience-container .experience-item .experience-text {
   font-size: 20px;
@@ -488,6 +541,7 @@ h1 {
 }
 .skills-container h1 {
   margin: 0px;
+  display: block !important;
 }
 .skills-container .skills {
   display: flex;
@@ -552,6 +606,7 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  width: 40vw;
 }
 form input {
   height: 30px;
@@ -589,12 +644,119 @@ form input, form textarea {
 
   .peace {
     position: static !important;
-    animation: none !important;
+  }
+
+  .form form {
+    width: 50vw;
+  }
+
+  .para {
+    height: 130px !important;
+  }
+
+  .experience-wrapper, #about, #project-section, #experience, #hire {
+    margin-top: 50px;
+  }
+  .experience-wrapper h1, #about h1, #project-section h1, #experience h1, #hire h1 {
+    display: block;
+  }
+
+  #about {
+    justify-content: start;
+  }
+
+  #project-section {
+    align-items: start;
+  }
+  #project-section .projects {
+    display: none;
+  }
+  #project-section .projects-detail-view {
+    display: block;
+  }
+  #project-section .projects {
+    display: none;
+  }
+  #project-section .project-icons {
+    display: none;
+  }
+  #project-section .project-first, #project-section .project-second {
+    flex-direction: column;
+  }
+  #project-section .single-project-detail {
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #d41c64;
+  }
+
+  .about-text {
+    width: 80%;
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 800px) {
-  #home, #project-section, #experience, #about, #hire {
-    overflow: auto;
+  * {
+    font-weight: bold;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  .hamburger-img {
+    display: block;
+  }
+
+  h1 {
+    font-size: 33px !important;
+  }
+
+  h2 {
+    font-size: 25px !important;
+  }
+
+  .projects {
+    width: 90vw;
+  }
+
+  .experience-wrapper {
+    width: 90%;
+  }
+  .experience-wrapper .experience-text {
+    font-size: 17px !important;
+  }
+
+  .skills {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+
+  .form {
+    margin-top: 0px;
+    padding: 0px;
+    border: none;
+  }
+  .form form {
+    width: 80vw;
+  }
+  .form input, .form textarea, .form button {
+    font-size: 16px !important;
+  }
+
+  #hire {
+    align-items: center;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+  .socials img {
+    width: 50px;
+    height: 50px;
+    margin: 0 4px;
   }
 
   .nav-container {
@@ -604,10 +766,11 @@ form input, form textarea {
     flex-direction: column;
   }
   .nav-container .menu .home {
-    position: static;
+    display: none;
   }
   .nav-container .menu .hire {
     position: static;
+    animation: none;
   }
 
   #cursor {
@@ -629,12 +792,101 @@ form input, form textarea {
   }
 
   .para {
-    background: #d41c64;
-    height: 2px !important;
+    background: white;
+    border-bottom: 3px solid #d41c64 !important;
+    height: 50px !important;
+    clip-path: none !important;
   }
 
   .hiring-animation {
     display: none;
+  }
+
+  .love-img {
+    width: 80%;
+  }
+
+  #about .about-who-container {
+    width: 70vw;
+    justify-content: center;
+  }
+  #about .about-who-container .previous-about {
+    margin: 0px 10px;
+  }
+  #about .about-who-container .about-pictures-container {
+    flex-wrap: nowrap;
+  }
+  #about .about-who-container .about-pictures-container .about-pictures {
+    padding: 0px;
+  }
+  #about .about-who-container .about-pictures-container img {
+    width: 50px;
+    height: 50px;
+  }
+  #about .about-who-container .about-pictures-container .disslike {
+    margin: 0px 0px 0px 10px;
+  }
+  #about .about-text {
+    font-size: 17px;
+  }
+  #about .heart img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .next, .next-about, .previous, .previous-about {
+    width: 24px;
+    height: 24px;
+  }
+
+  .menu-item {
+    margin: 0px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .project-second {
+    display: flex !important;
+  }
+
+  .next, .previous {
+    display: none;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .single-project-detail {
+    margin: 15px 0px !important;
+  }
+  .single-project-detail img {
+    width: 70vw !important;
+    display: block;
+  }
+  .single-project-detail .single-project-text {
+    width: 70vw;
+  }
+
+  .skills-container {
+    width: 80vw;
+  }
+  .skills-container .skills {
+    width: 80vw;
+    justify-content: start;
+  }
+  .skills-container .skills .skill-card {
+    font-size: 15px;
+    justify-content: center;
+    text-align: center !important;
+  }
+  .skills-container .skills .skill-card img {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
   }
 }
 

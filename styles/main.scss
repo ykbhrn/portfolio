@@ -1,4 +1,3 @@
-// @import '~bulma/bulma.sass';
 $main: #d41c64;
 $second: #fadf1c;
 $mainFont: 'dirtyDeoHandInk';
@@ -10,9 +9,17 @@ $mainFont: 'dirtyDeoHandInk';
   format('truetype'); 
 }
 
+#home, #project-section, #experience, #about, #hire{
+  overflow: auto;
+}
+
 a{
   text-decoration: none;
   color: black;
+}
+
+h2{
+  color: $main;
 }
 
 ::before, ::after {
@@ -105,6 +112,40 @@ body{
  }
 
 //navigation
+.hamburger-nav{
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 67px;
+  left: -5px; 
+  flex-direction: column;
+  z-index: 121;
+  background: white;
+  opacity: 0.9;
+  padding: 5px 5px 5px 25px;
+  border: 1px solid #DCDCDC ;
+  .hamburger-item{
+    font-size: 20px;
+    margin-bottom: 12px;
+    &:hover{
+      border-bottom: 1px solid $main;
+    }
+  }
+}
+
+.hamburger-img{
+  z-index: 120;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  display: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: url('../images/hamburger.png');
+  background-size: cover;
+}
+
 .nav-container{
   display: flex;
   justify-content: center;
@@ -131,7 +172,7 @@ body{
 
 nav{
   padding: 10px 0 5px 0;
-  z-index: 111;
+  z-index: 110;
   font-size: 24px;
   font-weight: bold;
   position: fixed;
@@ -184,6 +225,10 @@ nav{
   display: flex;
   justify-content: center;
   align-items: center;
+  h2{
+    text-align: center;
+    margin: 0px;
+  }
 }
 
 .project-container{
@@ -224,6 +269,9 @@ nav{
     justify-content: center;
     align-items: center;
     width: 500px;
+    img{
+      width: 500px;
+    }
     &:nth-child(1){
       margin-right: 50px;
     }
@@ -239,6 +287,9 @@ nav{
     justify-content: space-between;
     position: relative;
     align-items: start;
+  }
+  .single-project-text{
+    font-size: 20px;
   }
   // .project-first:nth-child(1){
   //   background: red;
@@ -323,11 +374,6 @@ h1{
   z-index: -1;
 }
 
-.love-img-wrapper{
-  display: flex;
-  align-items: center;
-}
-
 .next-about{
   margin-left: 20px;
   cursor: pointer;
@@ -384,9 +430,14 @@ h1{
   to { transform: scale(1.2);}
 }
 
+.love-img-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .love-img{
   width: 520px;
-  height: 310px;
 }
 
 //experience
@@ -397,6 +448,10 @@ h1{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  h1{
+    display: none;
+    margin: 0px;
+  }
 }
 
 .experience-wrapper{
@@ -405,9 +460,6 @@ h1{
   align-items: start;
   flex-wrap: wrap;
   width: 100vw;
-  h1{
-    margin: 0px;
-  }
 }
 
 .experience-container{
@@ -419,7 +471,7 @@ h1{
   .experience-item{
     margin-bottom: 40px;
     h2{
-      margin: 0px;
+      margin: 5px 0;
     }
     .experience-text{
       font-size: 20px;
@@ -439,6 +491,7 @@ h1{
   width: 500px;
   h1{
     margin: 0px;  
+    display: block!important;
   }
   .skills{
     display: flex;
@@ -506,6 +559,7 @@ h1{
 form{
   display: flex;
   flex-direction: column;
+  width: 40vw;
   input{
     height: 30px;
   }
@@ -548,25 +602,138 @@ form{
 
   .peace{
     position: static!important;
-    animation: none!important;
+  }
+
+  .form{
+    form{
+      width: 50vw;
+    }
+  }
+
+  .para{
+    height: 130px!important;
+  }
+
+  .experience-wrapper, #about, #project-section, #experience, #hire{
+    margin-top: 50px;
+    h1{
+      display: block;
+    }
+  }
+
+  #about{
+    justify-content: start;
+  }
+
+  #project-section{
+    align-items: start;
+    .projects{
+      display: none;
+    }
+    .projects-detail-view{
+      display: block;
+    }
+
+    .projects{
+      display: none;
+    }
+  
+    .project-icons{
+      display: none;
+    }
+  
+    .project-first, .project-second{
+      flex-direction: column;
+    }
+    .single-project-detail{
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $main;
+    }
+  }
+
+  .about-text{
+    width: 80%;
+    font-size: 20px;
   }
 }
 
-@media only screen and (max-width: 800px) 
-{
-  #home, #project-section, #experience, #about, #hire{
-    overflow: auto;
+@media only screen and (max-width: 800px) {
+ *{
+   font-weight: bold;
+ }
+
+ .nav-container{
+  display: none;
+}
+
+.hamburger-img{
+  display: block;
+}
+
+h1{
+  font-size: 33px!important;
+}
+
+ h2{
+   font-size: 25px!important;
+ }
+
+  .projects{
+    width: 90vw;
+  }
+
+  .experience-wrapper{
+    width: 90%;
+    .experience-text{
+      font-size: 17px!important;
+    }
+  }
+
+  .skills{
+    width: 80%;
+    flex-wrap: wrap;
+  }
+
+  .form{
+    form{
+      width: 80vw;
+    }
+    margin-top: 0px;
+    padding: 0px;
+    border: none;
+    input, textarea, button{
+      font-size: 16px!important;
+    }
+  }
+
+  #hire{
+    align-items: center;
+  }
+
+  .socials{
+    img{
+      width: 50px;
+      height: 50px;
+      margin: 0 4px;
+    }
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
   }
 
   .nav-container{
     position: absolute;
     .menu{
       flex-direction: column;
-     .home{
-       position: static;
+    .home{
+      display: none;
       }
       .hire{
         position: static;
+        animation: none;
       }
     }
   }
@@ -590,11 +757,104 @@ form{
   }
 
   .para{
-    background: $main;
-    height: 2px!important;
+    background: white;
+    border-bottom: 3px solid $main!important;
+    height: 50px!important;
+    clip-path: none!important;
   }
   
   .hiring-animation{
     display: none;
+  }
+
+  .love-img{
+    width: 80%;
+  }
+
+  #about{
+    .about-who-container{
+      width: 70vw;
+      justify-content: center;
+      .previous-about{
+        margin: 0px 10px;
+      }
+      .about-pictures-container{
+        flex-wrap: nowrap;
+        .about-pictures{
+          padding: 0px;
+        }
+        img{
+          width: 50px;
+          height: 50px;
+        }
+        .disslike{
+          margin: 0px 0px 0px 10px;
+        }
+      }
+    }
+
+    .about-text{
+      font-size: 17px;
+    }
+
+    .heart img{
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .next, .next-about, .previous, .previous-about{
+    width: 24px;
+    height: 24px;
+  }
+  .menu-item{
+    margin: 0px!important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.project-second{
+  display: flex!important;
+}
+
+.next, .previous{
+  display: none;
+}
+
+h1{
+  font-size: 25px;
+}
+
+h2{
+  font-size: 20px;
+}
+
+  .single-project-detail{
+    img{
+      width: 70vw!important;
+      display: block;
+    }
+    margin: 15px 0px!important;    
+    .single-project-text{
+      width: 70vw;
+    }
+  }
+
+  .skills-container{
+    width: 80vw;
+    .skills{
+      width: 80vw;
+      justify-content: start;
+      .skill-card{
+        font-size: 15px;
+        img{
+          width: 40px;
+          height: 40px;
+          margin: 0 auto;
+        }
+        justify-content: center;
+        text-align: center!important;
+      }
+    }
   }
 }
