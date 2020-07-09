@@ -155,7 +155,7 @@ function init() {
   function showWho() {
     aboutWho.style.display = 'flex'
     aboutText.style.display = 'none'
-    aboutHeader.textContent = 'Who am I in the Pictures'
+    aboutHeader.textContent = 'Who I am in the Pictures'
   }
 
   $('.submit').click(function() {

@@ -9,7 +9,7 @@ $mainFont: 'dirtyDeoHandInk';
   format('truetype'); 
 }
 
-#home, #project-section, #experience, #about, #hire{
+#home, #project-section, #experience, #hire, #about{
   overflow: auto;
 }
 
@@ -151,6 +151,7 @@ body{
   justify-content: center;
   width: 100vw;
   background-color: white;
+  opacity: 0.9;
 }
 
 .nav-scrolled{
@@ -227,7 +228,7 @@ nav{
   align-items: center;
   h2{
     text-align: center;
-    margin: 0px;
+    margin: 5px 0px;
   }
 }
 
@@ -290,6 +291,10 @@ nav{
   }
   .single-project-text{
     font-size: 20px;
+    a{
+      color: $main;
+      text-decoration: underline;
+    }
   }
   // .project-first:nth-child(1){
   //   background: red;
@@ -660,7 +665,7 @@ form{
 
 @media only screen and (max-width: 800px) {
  *{
-   font-weight: bold;
+   font-weight: bold!important;
  }
 
  .nav-container{

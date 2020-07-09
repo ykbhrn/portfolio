@@ -2,7 +2,7 @@
   font-family: "dirtyDeoHandInk";
   src: url("../fonts/dirtydeohandink/dirtyDeoHandInk.ttf") format("truetype");
 }
-#home, #project-section, #experience, #about, #hire {
+#home, #project-section, #experience, #hire, #about {
   overflow: auto;
 }
 
@@ -190,6 +190,7 @@ body {
   justify-content: center;
   width: 100vw;
   background-color: white;
+  opacity: 0.9;
 }
 
 .selected-nav::after {
@@ -259,7 +260,7 @@ nav .hire {
 }
 #project-section h2 {
   text-align: center;
-  margin: 0px;
+  margin: 5px 0px;
 }
 
 .project-container {
@@ -322,6 +323,10 @@ nav .hire {
 }
 .projects-detail-view .single-project-text {
   font-size: 20px;
+}
+.projects-detail-view .single-project-text a {
+  color: #d41c64;
+  text-decoration: underline;
 }
 .projects-detail-view .project-second {
   display: none;
@@ -696,7 +701,7 @@ form input, form textarea {
 }
 @media only screen and (max-width: 800px) {
   * {
-    font-weight: bold;
+    font-weight: bold !important;
   }
 
   .nav-container {
