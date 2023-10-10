@@ -334,7 +334,6 @@ nav {
 
 // Projects section
 #project-section {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -355,13 +354,13 @@ nav {
 
 .projects {
   width: 900px;
-  height: 480px;
+  height: 400px;
   overflow: hidden;
 }
 
 .single-project {
   width: 900px;
-  height: 480px;
+  height: 400px;
 
   &:hover {
     filter: brightness(0.7);
@@ -378,8 +377,10 @@ nav {
 }
 
 .projects-detail-view {
-  height: 480px;
   display: none;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
 
   .single-project-detail {
     display: flex;
@@ -387,6 +388,7 @@ nav {
     justify-content: center;
     align-items: center;
     width: 500px;
+    margin: 0 40px 80px 0;
 
     img {
       width: 500px;
@@ -405,13 +407,6 @@ nav {
     }
   }
 
-  .project-first {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    align-items: start;
-  }
-
   .single-project-text {
     font-size: 20px;
 
@@ -424,13 +419,6 @@ nav {
   // .project-first:nth-child(1){
   //   background: red;
   // }
-
-  .project-second {
-    display: none;
-    justify-content: space-around;
-    position: relative;
-    align-items: start;
-  }
 
   .next {
     position: absolute;
@@ -505,7 +493,7 @@ nav {
 .projects-slider {
   width: 2400px;
   position: relative;
-  height: 480px;
+  height: 400px;
   animation: projects 15s infinite normal;
   animation-play-state: inherit;
   display: flex;
@@ -713,12 +701,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: polygon(0 9%, 100% 9%, 100% 64%, 0 100%);
-  margin: 100px 0;
+  margin: 60px 0;
 
   &.two {
     width: 100%;
     height: 300px;
     clip-path: polygon(0 9%, 100% 9%, 100% 64%, 0 100%);
+    margin: 40px 0;
   }
 
   &.three {

@@ -275,7 +275,6 @@ nav .hire {
 }
 
 #project-section {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,13 +294,13 @@ nav .hire {
 
 .projects {
   width: 900px;
-  height: 480px;
+  height: 400px;
   overflow: hidden;
 }
 
 .single-project {
   width: 900px;
-  height: 480px;
+  height: 400px;
 }
 .single-project:hover {
   filter: brightness(0.7);
@@ -316,8 +315,10 @@ nav .hire {
 }
 
 .projects-detail-view {
-  height: 480px;
   display: none;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
 }
 .projects-detail-view .single-project-detail {
   display: flex;
@@ -325,6 +326,7 @@ nav .hire {
   justify-content: center;
   align-items: center;
   width: 500px;
+  margin: 0 40px 80px 0;
 }
 .projects-detail-view .single-project-detail img {
   width: 500px;
@@ -338,24 +340,12 @@ nav .hire {
 .projects-detail-view .single-project-detail:hover {
   filter: brightness(0.7);
 }
-.projects-detail-view .project-first {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  align-items: start;
-}
 .projects-detail-view .single-project-text {
   font-size: 20px;
 }
 .projects-detail-view .single-project-text a {
   color: #d41c64;
   text-decoration: underline;
-}
-.projects-detail-view .project-second {
-  display: none;
-  justify-content: space-around;
-  position: relative;
-  align-items: start;
 }
 .projects-detail-view .next {
   position: absolute;
@@ -414,7 +404,7 @@ nav .hire {
 .projects-slider {
   width: 2400px;
   position: relative;
-  height: 480px;
+  height: 400px;
   animation: projects 15s infinite normal;
   animation-play-state: inherit;
   display: flex;
@@ -603,12 +593,13 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: polygon(0 9%, 100% 9%, 100% 64%, 0 100%);
-  margin: 100px 0;
+  margin: 60px 0;
 }
 .para.two {
   width: 100%;
   height: 300px;
   clip-path: polygon(0 9%, 100% 9%, 100% 64%, 0 100%);
+  margin: 40px 0;
 }
 .para.three {
   width: 100%;

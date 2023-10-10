@@ -10,10 +10,10 @@ function init() {
   const header = document.querySelector('.menu')
   const projectIconOne = document.querySelector('.project-icon-one')
   const projectIconAll = document.querySelector('.project-icon-two')
-  const projectFirst = document.querySelector('.project-first')
-  const projectSecond = document.querySelector('.project-second')
-  const next = document.querySelector('.next')
-  const previous = document.querySelector('.previous')
+  // const projectFirst = document.querySelector('.project-first')
+  // const projectSecond = document.querySelector('.project-second')
+  // const next = document.querySelector('.next')
+  // const previous = document.querySelector('.previous')
   const nextAbout = document.querySelector('.next-about')
   const previousAbout = document.querySelector('.previous-about')
   const aboutText = document.querySelector('.about-container')
@@ -24,7 +24,7 @@ function init() {
 
 
   function scroll() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       const selected = document.querySelector('.selected-nav')
       if (selected !== null) {
         selected.classList.remove('selected-nav')
@@ -34,13 +34,13 @@ function init() {
   }
 
   function scrollOut() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       header.children[2].classList.remove('selected-nav')
     }
   }
 
   function scrollAbout() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       const selected = document.querySelector('.selected-nav')
       if (selected !== null) {
         selected.classList.remove('selected-nav')
@@ -49,13 +49,13 @@ function init() {
     }
   }
   function scrollOutAbout() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       header.children[1].classList.remove('selected-nav')
     }
   }
 
   function scrollExperience() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       const selected = document.querySelector('.selected-nav')
       if (selected !== null) {
         selected.classList.remove('selected-nav')
@@ -64,13 +64,13 @@ function init() {
     }
   }
   function scrollOutExperience() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       header.children[3].classList.remove('selected-nav')
     }
   }
 
   function scrollHome() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       const selected = document.querySelector('.selected-nav')
       if (selected !== null) {
         selected.classList.remove('selected-nav')
@@ -79,45 +79,45 @@ function init() {
     }
   }
   function scrollOutHome() {
-    if ( $(document).width() > 1100 ){
+    if ($(document).width() > 1100) {
       header.children[0].classList.remove('selected-nav')
     }
   }
-  
-    
+
+
   const sectionOneOptions = {
     rootMargin: '-200px 0px 0px 0px'
   }
 
-  const sectionOneObserver = new IntersectionObserver( function(entries, sectionOneObserver) {
-    entries.forEach( entry => {
+  const sectionOneObserver = new IntersectionObserver(function (entries, sectionOneObserver) {
+    entries.forEach(entry => {
       if (!entry.isIntersecting) {
         header.classList.add('nav-scrolled')
       } else {
         header.classList.remove('nav-scrolled')
       }
     })
-  }, 
-  sectionOneOptions)
+  },
+    sectionOneOptions)
 
   sectionOneObserver.observe(home)
 
 
 
   function cursorMove(event) {
-    
-    if ( $(document).width() > 1100 ){
+
+    if ($(document).width() > 1100) {
       const x = event.clientX
-      const y = event. clientY
+      const y = event.clientY
       cursor.style.left = x + 'px'
       cursor.style.top = y + 'px'
     }
-    
+
   }
 
 
-  function activeNavbar(event){ 
-    if ( $(document).width() > 1100 ){
+  function activeNavbar(event) {
+    if ($(document).width() > 1100) {
       const selected = document.querySelector('.selected-nav')
       if (selected !== null) {
         selected.classList.remove('selected-nav')
@@ -126,25 +126,25 @@ function init() {
     }
   }
 
-  function showAll(){
+  function showAll() {
     slider.style.display = 'none'
     projectDetailView.style.display = 'flex'
   }
 
-  function showOne(){
+  function showOne() {
     projectDetailView.style.display = 'none'
     slider.style.display = 'block'
   }
 
-  function showFirst() {
-    projectFirst.style.display = 'flex'
-    projectSecond.style.display = 'none'
-  }
+  // function showFirst() {
+  //   projectFirst.style.display = 'flex'
+  //   projectSecond.style.display = 'none'
+  // }
 
-  function showSecond() {
-    projectSecond.style.display = 'flex'
-    projectFirst.style.display = 'none'
-  }
+  // function showSecond() {
+  //   projectSecond.style.display = 'flex'
+  //   projectFirst.style.display = 'none'
+  // }
 
   function showText() {
     aboutText.style.display = 'flex'
@@ -158,9 +158,9 @@ function init() {
     aboutHeader.textContent = 'Who I am in the Pictures'
   }
 
-  $('.submit').click(function() {
+  $('.submit').click(function () {
     console.log('click')
-    
+
     const email = $('.email').val()
     const subject = $('.subject').val()
     const message = $('.message').val()
@@ -169,9 +169,9 @@ function init() {
 
     if (email.length < 5 || !email.includes('@') || !email.includes('.')) {
       event.preventDefault()
-      statusElm.append('<div>Type valid email adress</div>')   
-    } 
-    if (message.length < 2)  {
+      statusElm.append('<div>Type valid email adress</div>')
+    }
+    if (message.length < 2) {
       event.preventDefault()
       statusElm.append('<div>You can\'t send empty email</div>')
     }
@@ -188,7 +188,7 @@ function init() {
   // }
   hamburgerMenu.style.display = 'none'
   function hamburgerClick() {
-    if (hamburgerMenu.style.display === 'none'){
+    if (hamburgerMenu.style.display === 'none') {
       hamburgerMenu.style.display = 'flex'
       hamburger.style.backgroundImage = 'url(' + './images/openhamburger.png' + ')'
     } else {
@@ -197,7 +197,7 @@ function init() {
     }
   }
 
-  document.addEventListener( 'mousemove', cursorMove)
+  document.addEventListener('mousemove', cursorMove)
   header.addEventListener('click', activeNavbar)
   projects.addEventListener('mouseenter', scroll)
   projects.addEventListener('mouseleave', scrollOut)
@@ -209,8 +209,8 @@ function init() {
   experience.addEventListener('mouseleave', scrollOutExperience)
   projectIconOne.addEventListener('click', showOne)
   projectIconAll.addEventListener('click', showAll)
-  previous.addEventListener('click', showFirst)
-  next.addEventListener('click', showSecond)
+  // previous.addEventListener('click', showFirst)
+  // next.addEventListener('click', showSecond)
   previousAbout.addEventListener('click', showText)
   nextAbout.addEventListener('click', showWho)
   // hamburger.addEventListener('mouseenter', hamburgerIn)
